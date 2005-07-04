@@ -14,7 +14,7 @@ Summary:	Guifications Plugin for Gaim
 Summary(pl):	Wtyczka Guifications dla Gaima
 Name:		gaim-plugin-guifications
 Version:	2.10
-Release:	0.2
+Release:	1
 Epoch:		0
 License:	GPL
 Group:		Applications/Communications
