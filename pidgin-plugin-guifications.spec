@@ -11,6 +11,7 @@
 %define gaim_build_minor_ver %(pkg-config --modversion gaim 2>/dev/null | awk -F. '{ print $2 }')
 #
 Summary:	Guifications Plugin for Gaim
+Summary(pl):	Wtyczka Guifications dla Gaima
 Name:		gaim-plugin-guifications
 Version:	2.10
 Release:	0.2
@@ -20,12 +21,12 @@ Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/guifications/guifications-%{version}.tar.bz2
 # Source0-md5:	df22e7f44722ecd9cf12876c83032d60
 URL:		http://guifications.sf.net/Guifications/
-BuildRequires:	pkgconfig
-BuildRequires:	libtool
-BuildRequires:	gettext
 BuildRequires:	gaim-devel >= 1:%{gaim_major_ver}.%{gaim_minor_ver}
 BuildRequires:	gaim-devel < 1:%{gaim_next_major_ver}
-BuildRequires:	gtk+2-devel
+BuildRequires:	gettext
+BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	libtool
+BuildRequires:	pkgconfig
 Requires:	gaim >= 1:%{gaim_major_ver}.%{gaim_build_minor_ver}
 Requires:	gaim < 1:%{gaim_next_major_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,6 +35,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Guifications is a Gaim plugin that adds notification windows styled
 after those found in MSN, deadaim, and newer versions of AIM, Yahoo
 instant messenger, and a lot of other applications.
+
+%description -l pl
+Guifications to wtyczka dla Gaima dodaj±ca okienka powiadomieñ
+stylizowane na takie, jakie mo¿na napotkaæ w MSN, deadaimie i nowszych
+wersjach AIM-a, Yahoo Instant Messengerze oraz wielu innych
+aplikacjach.
 
 %prep
 %setup -q -n guifications-%{version}
