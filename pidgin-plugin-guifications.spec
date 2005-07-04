@@ -13,7 +13,7 @@
 Summary:	Guifications Plugin for Gaim
 Name:		gaim-plugin-guifications
 Version:	2.10
-Release:	0.1
+Release:	0.2
 Epoch:		0
 License:	GPL
 Group:		Applications/Communications
@@ -58,5 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %files -f guifications.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING README doc/flow.png doc/flow.dia doc/QUOTES
-%{_libdir}/gaim/*.so
+%attr(755,root,root) %{_libdir}/gaim/*.so
 %{_datadir}/pixmaps/gaim/guifications
