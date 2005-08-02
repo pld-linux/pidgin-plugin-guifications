@@ -13,13 +13,13 @@
 Summary:	Guifications Plugin for Gaim
 Summary(pl):	Wtyczka Guifications dla Gaima
 Name:		gaim-plugin-guifications
-Version:	2.11
+Version:	2.12
 Release:	1
 Epoch:		0
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/guifications/guifications-%{version}.tar.bz2
-# Source0-md5:	80f8d77f97fdcff2b6478dcb6a4feb5c
+# Source0-md5:	c6437efe487a2c3675361c53fdf376bb
 URL:		http://guifications.sf.net/Guifications/
 BuildRequires:	gaim-devel >= 1:%{gaim_major_ver}.%{gaim_minor_ver}
 BuildRequires:	gaim-devel < 1:%{gaim_next_major_ver}
