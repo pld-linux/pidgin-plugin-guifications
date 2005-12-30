@@ -5,24 +5,25 @@
 # the correct minimum version of Gaim is Require:'d based on what version of
 # the Gaim headers we actually build with.
 #
-%define gaim_major_ver 1
+%define gaim_major_ver 2
 %define gaim_minor_ver 0
 %define gaim_next_major_ver %(echo $((%{gaim_major_ver}+1)))
 %define gaim_build_minor_ver %(pkg-config --modversion gaim 2>/dev/null | awk -F. '{ print $2 }')
 #
+%define beta beta1
 Summary:	Guifications Plugin for Gaim
 Summary(pl):	Wtyczka Guifications dla Gaima
 Name:		gaim-plugin-guifications
-Version:	2.12
-Release:	1
+Version:	2.13
+Release:	0.%{beta}.1
 Epoch:		0
 License:	GPL
 Group:		Applications/Communications
-Source0:	http://dl.sourceforge.net/guifications/guifications-%{version}.tar.bz2
-# Source0-md5:	c6437efe487a2c3675361c53fdf376bb
+Source0:	http://dl.sourceforge.net/guifications/guifications-%{version}%{beta}.tar.bz2
+# Source0-md5:	6574b72b4fac964558bf6c1d66744561
 URL:		http://guifications.sf.net/Guifications/
-BuildRequires:	gaim-devel >= 1:%{gaim_major_ver}.%{gaim_minor_ver}
-BuildRequires:	gaim-devel < 1:%{gaim_next_major_ver}
+BuildRequires: gaim-devel >= 1:%{gaim_major_ver}.%{gaim_minor_ver}
+BuildRequires: gaim-devel < 1:%{gaim_next_major_ver}
 BuildRequires:	gettext
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	libtool
@@ -43,7 +44,7 @@ wersjach AIM-a, Yahoo Instant Messengerze oraz wielu innych
 aplikacjach.
 
 %prep
-%setup -q -n guifications-%{version}
+%setup -q -n guifications-%{version}%{beta}
 
 %build
 %configure
