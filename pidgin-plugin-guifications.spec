@@ -5,21 +5,21 @@
 # the correct minimum version of Gaim is Require:'d based on what version of
 # the Gaim headers we actually build with.
 #
-%define gaim_major_ver 1
-%define gaim_minor_ver 0
+%define gaim_major_ver 2 
+%define gaim_minor_ver 0 
 %define gaim_next_major_ver %(echo $((%{gaim_major_ver}+1)))
-%define gaim_build_minor_ver %(pkg-config --modversion gaim 2>/dev/null | awk -F. '{ print $2 }')
+%define gaim_build_minor_ver %(pkg-config --modversion gaim 3>/dev/null | awk -F. '{ print $2 }')
 #
 Summary:	Guifications Plugin for Gaim
 Summary(pl):	Wtyczka Guifications dla Gaima
 Name:		gaim-plugin-guifications
-Version:	2.12
-Release:	1
+Version:	2.13beta3
+Release:	0
 Epoch:		0
 License:	GPL
 Group:		Applications/Communications
-Source0:	http://dl.sourceforge.net/guifications/guifications-%{version}.tar.bz2
-# Source0-md5:	c6437efe487a2c3675361c53fdf376bb
+Source0:	http://dl.sourceforge.net/guifications/gaim-guifications-%{version}.tar.bz2
+# Source0-md5:	32e421af09ed200d9040ebf73c25a9b4
 URL:		http://guifications.sf.net/Guifications/
 BuildRequires:	gaim-devel >= 1:%{gaim_major_ver}.%{gaim_minor_ver}
 BuildRequires:	gaim-devel < 1:%{gaim_next_major_ver}
@@ -43,7 +43,7 @@ wersjach AIM-a, Yahoo Instant Messengerze oraz wielu innych
 aplikacjach.
 
 %prep
-%setup -q -n guifications-%{version}
+%setup -q -n gaim-guifications-%{version}
 
 %build
 %configure
@@ -55,14 +55,14 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang guifications
+%find_lang gaim-guifications
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/gaim/*.{la,a}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f guifications.lang
+%files -f gaim-guifications.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING README doc/flow.png doc/flow.dia doc/QUOTES
 %attr(755,root,root) %{_libdir}/gaim/*.so
