@@ -10,15 +10,17 @@
 %define gaim_next_major_ver %(echo $((%{gaim_major_ver}+1)))
 %define gaim_build_minor_ver %(pkg-config --modversion gaim 2>/dev/null | awk -F. '{ print $2 }')
 #
+%define	_beta	beta3
+%define	_rel	1
 Summary:	Guifications Plugin for Gaim
 Summary(pl):	Wtyczka Guifications dla Gaima
 Name:		gaim-plugin-guifications
-Version:	2.13beta3
-Release:	0
-Epoch:		0
+Version:	2.13
+Release:	0.%{_beta}.%{_rel}
+Epoch:		1
 License:	GPL
 Group:		Applications/Communications
-Source0:	http://dl.sourceforge.net/guifications/gaim-guifications-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/guifications/gaim-guifications-%{version}%{_beta}.tar.bz2
 # Source0-md5:	32e421af09ed200d9040ebf73c25a9b4
 URL:		http://guifications.sf.net/Guifications/
 BuildRequires:	gaim-devel >= 1:%{gaim_major_ver}.%{gaim_minor_ver}
@@ -43,7 +45,7 @@ wersjach AIM-a, Yahoo Instant Messengerze oraz wielu innych
 aplikacjach.
 
 %prep
-%setup -q -n gaim-guifications-%{version}
+%setup -q -n gaim-guifications-%{version}%{?_beta}
 
 %build
 %configure
