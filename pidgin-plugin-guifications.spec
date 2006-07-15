@@ -5,10 +5,10 @@
 # the correct minimum version of Gaim is Require:'d based on what version of
 # the Gaim headers we actually build with.
 #
-%define gaim_major_ver 2 
-%define gaim_minor_ver 0 
+%define gaim_major_ver 2
+%define gaim_minor_ver 0
 %define gaim_next_major_ver %(echo $((%{gaim_major_ver}+1)))
-%define gaim_build_minor_ver %(pkg-config --modversion gaim 3>/dev/null | awk -F. '{ print $2 }')
+%define gaim_build_minor_ver %(pkg-config --modversion gaim 2>/dev/null | awk -F. '{ print $2 }')
 #
 Summary:	Guifications Plugin for Gaim
 Summary(pl):	Wtyczka Guifications dla Gaima
