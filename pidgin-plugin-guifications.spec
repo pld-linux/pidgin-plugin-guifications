@@ -12,7 +12,7 @@
 #
 %define beta beta1
 Summary:	Guifications Plugin for Gaim
-Summary(pl):	Wtyczka Guifications dla Gaima
+Summary(pl.UTF-8):   Wtyczka Guifications dla Gaima
 Name:		gaim-plugin-guifications
 Version:	2.13
 Release:	0.%{beta}.1
@@ -37,9 +37,9 @@ Guifications is a Gaim plugin that adds notification windows styled
 after those found in MSN, deadaim, and newer versions of AIM, Yahoo
 instant messenger, and a lot of other applications.
 
-%description -l pl
-Guifications to wtyczka dla Gaima dodaj±ca okienka powiadomieñ
-stylizowane na takie, jakie mo¿na napotkaæ w MSN, deadaimie i nowszych
+%description -l pl.UTF-8
+Guifications to wtyczka dla Gaima dodajÄ…ca okienka powiadomieÅ„
+stylizowane na takie, jakie moÅ¼na napotkaÄ‡ w MSN, deadaimie i nowszych
 wersjach AIM-a, Yahoo Instant Messengerze oraz wielu innych
 aplikacjach.
 
