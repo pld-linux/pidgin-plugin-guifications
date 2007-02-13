@@ -13,7 +13,7 @@
 %define	_beta	beta3
 %define	_rel	1
 Summary:	Guifications Plugin for Gaim
-Summary(pl.UTF-8):   Wtyczka Guifications dla Gaima
+Summary(pl.UTF-8):	Wtyczka Guifications dla Gaima
 Name:		gaim-plugin-guifications
 Version:	2.13
 Release:	0.%{_beta}.%{_rel}
