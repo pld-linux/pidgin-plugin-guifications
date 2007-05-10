@@ -1,9 +1,9 @@
 #
 # pidgin_major_ver and pidgin_minor_ver should be defined to match the minimum
-# Gaim API version _required_ to build Guifications
-# Due to the way Gaim checks plugin versions, we need to also ensure that
-# the correct minimum version of Gaim is Require:'d based on what version of
-# the Gaim headers we actually build with.
+# Pidgin API version _required_ to build Guifications
+# Due to the way Pidgin checks plugin versions, we need to also ensure that
+# the correct minimum version of Pidgin is Require:'d based on what version of
+# the Pidgin headers we actually build with.
 #
 # TODO:
 # - requirements of pidgin needed (libs)
@@ -15,8 +15,8 @@
 #
 #%define	_beta	beta3
 %define	_rel	1
-Summary:	Guifications Plugin for Gaim
-Summary(pl.UTF-8):	Wtyczka Guifications dla Gaima
+Summary:	Guifications Plugin for Pidgin 
+Summary(pl.UTF-8):	Wtyczka Guifications dla Pidginaa
 Name:		pidgin-plugin-guifications
 Version:	2.14
 Release:	0.1
@@ -27,14 +27,14 @@ Group:		Applications/Communications
 Source0:	http://downloads.guifications.org/plugins//Guifications2/pidgin-guifications-%{version}.tar.bz2
 # Source0-md5:	3c7b126d255d0c768a4af699c4454481
 URL:		http://guifications.sf.net/Guifications/
-BuildRequires:	pidgin-devel >= 1:%{pidgin_major_ver}.%{pidgin_minor_ver}
-BuildRequires:	pidgin-devel < 1:%{pidgin_next_major_ver}
+BuildRequires:	pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}
+BuildRequires:	pidgin-devel < %{pidgin_next_major_ver}
 BuildRequires:	gettext
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-Requires:	pidgin >= 1:%{pidgin_major_ver}.%{pidgin_minor_ver}
-Requires:	pidgin < 1:%{pidgin_next_major_ver}
+Requires:	pidgin >= %{pidgin_major_ver}.%{pidgin_minor_ver}
+Requires:	pidgin < %{pidgin_next_major_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
