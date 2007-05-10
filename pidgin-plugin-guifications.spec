@@ -10,7 +10,6 @@
 #
 %define pidgin_major_ver 2
 %define pidgin_minor_ver 0.0
-%define pidgin_next_major_ver %(echo $((%{pidgin_major_ver}+1)))
 %define pidgin %(pkg-config --modversion pidgin 2>/dev/null | awk -F. '{ print $2 }')
 #
 #%define	_beta	beta3
@@ -34,7 +33,6 @@ BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 Requires:	pidgin >= %{pidgin_major_ver}.%{pidgin_minor_ver}
-Requires:	pidgin < %{pidgin_next_major_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
