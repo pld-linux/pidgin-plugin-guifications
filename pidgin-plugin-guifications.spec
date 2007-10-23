@@ -1,19 +1,11 @@
-#
-# pidgin_major_ver and pidgin_minor_ver should be defined to match the minimum
-# Pidgin API version _required_ to build Guifications
-# Due to the way Pidgin checks plugin versions, we need to also ensure that
-# the correct minimum version of Pidgin is Require:'d based on what version of
-# the Pidgin headers we actually build with.
-#
 # TODO:
 # - requirements of pidgin needed (libs)
-
 %define pidgin_ver %(pkg-config --modversion pidgin 2>/dev/null || echo ERROR)
 Summary:	Guifications Plugin for Pidgin
 Summary(pl.UTF-8):	Wtyczka Guifications dla Pidginaa
 Name:		pidgin-plugin-guifications
 Version:	2.14
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
@@ -24,8 +16,7 @@ URL:		http://guifications.sf.net/Guifications/
 BuildRequires:	gettext
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	libtool
-BuildRequires:	pidgin-devel < 2.1
-BuildRequires:	pidgin-devel >= 2.0
+BuildRequires:	pidgin-devel >= 2.2
 BuildRequires:	pkgconfig
 Requires:	pidgin >= %{pidgin_ver}
 Obsoletes:	gaim-plugin-guifications
