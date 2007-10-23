@@ -7,32 +7,28 @@
 #
 # TODO:
 # - requirements of pidgin needed (libs)
-#
-%define pidgin_major_ver 2
-%define pidgin_minor_ver 0.0
-%define pidgin %(pkg-config --modversion pidgin 2>/dev/null | awk -F. '{ print $2 }')
-#
-#%define	_beta	beta3
-%define	_rel	1
-Summary:	Guifications Plugin for Pidgin 
+
+%define pidgin_ver %(pkg-config --modversion pidgin 2>/dev/null || echo ERROR)
+Summary:	Guifications Plugin for Pidgin
 Summary(pl.UTF-8):	Wtyczka Guifications dla Pidginaa
 Name:		pidgin-plugin-guifications
 Version:	2.14
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
 #Source0:	http://dl.sourceforge.net/guifications/pidgin-guifications-%{version}.tar.bz2
-Source0:	http://downloads.guifications.org/plugins//Guifications2/pidgin-guifications-%{version}.tar.bz2
+Source0:	http://downloads.guifications.org/plugins/Guifications2/pidgin-guifications-%{version}.tar.bz2
 # Source0-md5:	3c7b126d255d0c768a4af699c4454481
 URL:		http://guifications.sf.net/Guifications/
-BuildRequires:	pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}
-BuildRequires:	pidgin-devel < %{pidgin_next_major_ver}
 BuildRequires:	gettext
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	libtool
+BuildRequires:	pidgin-devel < 2.1
+BuildRequires:	pidgin-devel >= 2.0
 BuildRequires:	pkgconfig
-Requires:	pidgin >= %{pidgin_major_ver}.%{pidgin_minor_ver}
+Requires:	pidgin >= %{pidgin_ver}
+Obsoletes:	gaim-plugin-guifications
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -70,4 +66,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING README doc/flow.png doc/flow.dia doc/QUOTES
 %attr(755,root,root) %{_libdir}/pidgin/*.so
-%{_datadir}/pixmaps/pidgin/guifications
+%{_pixmapsdir}/pidgin/guifications
