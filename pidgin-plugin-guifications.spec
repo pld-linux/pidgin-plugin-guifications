@@ -5,7 +5,7 @@ Summary:	Guifications Plugin for Pidgin
 Summary(pl.UTF-8):	Wtyczka Guifications dla Pidginaa
 Name:		pidgin-plugin-guifications
 Version:	2.14
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
