@@ -5,7 +5,7 @@ Summary:	Guifications Plugin for Pidgin
 Summary(pl.UTF-8):	Wtyczka Guifications dla Pidginaa
 Name:		pidgin-plugin-guifications
 Version:	2.14
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
@@ -13,11 +13,15 @@ Group:		Applications/Communications
 Source0:	http://downloads.guifications.org/plugins/Guifications2/pidgin-guifications-%{version}.tar.bz2
 # Source0-md5:	3c7b126d255d0c768a4af699c4454481
 URL:		http://guifications.sf.net/Guifications/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	libtool
+BuildRequires:	libtool
 BuildRequires:	pidgin-devel >= 2.2
 BuildRequires:	pkgconfig
+BuildRequires:	sed >= 4.0
 Requires:	pidgin >= %{pidgin_ver}
 Obsoletes:	gaim-plugin-guifications
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,8 +39,14 @@ aplikacjach.
 
 %prep
 %setup -q -n pidgin-guifications-%{version}
+mv po/{no,nb}.po
+sed -i -e '/ALL_LINGUAS/s,no,nb,' configure.ac
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
