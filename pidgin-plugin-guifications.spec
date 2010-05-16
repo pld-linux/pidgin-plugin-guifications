@@ -15,8 +15,9 @@ Source0:	http://downloads.guifications.org/plugins/Guifications2/pidgin-guificat
 URL:		http://guifications.sf.net/Guifications/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libtool
 BuildRequires:	pidgin-devel >= 2.2
