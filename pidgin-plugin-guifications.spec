@@ -12,7 +12,7 @@ Group:		Applications/Communications
 #Source0:	http://dl.sourceforge.net/guifications/pidgin-guifications-%{version}.tar.bz2
 Source0:	http://downloads.guifications.org/plugins/Guifications2/pidgin-guifications-%{version}.tar.bz2
 # Source0-md5:	3c7b126d255d0c768a4af699c4454481
-URL:		http://guifications.sf.net/Guifications/
+URL:		http://plugins.guifications.org/trac/wiki/Guifications
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
